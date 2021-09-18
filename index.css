@@ -51,7 +51,6 @@ header {
     background-size: cover;
     background-position: bottom;
     height: 14em;
-    /* ? Show off difference between 100% and 500px */
     width: 100%;
 }
 
@@ -68,7 +67,21 @@ header h1 span img {
 
 /* Font Media Query */
 
+/*  If the screen size is 710px wide or more, set the font-size of the header h1 */
+@media screen and (min-width: 710px){
+    header h1 {
+        font-size:5.5em
+    }
+}
 
+/*  If the screen size is 526px wide or less, set the font-size of the header h1 */
+
+@media screen and (max-width:526px){
+    header h1 {
+        margin-top: 1em;
+        font-size: 4em
+    }
+}
 
 
 
@@ -99,6 +112,31 @@ nav li {
 /* Underline nav links */
 
 
+.underline:after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 0%;
+    background: grey;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.underline:hover:after{
+    width: 100%;
+    background: green;
+}
+
+
+
+
 /* CONTENT */
 
 .container {
@@ -116,8 +154,8 @@ aside {
 }
 
 main img {
-   /* --------------------------------------------------------------- */
-    width: 500px;
+
+    width: 100%;
 
     max-width: 45em;
     height: auto;
@@ -134,8 +172,7 @@ main img {
     margin: 3em 0;
     height: 100%;
     display: flex;
-    /*  */
-
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -158,7 +195,26 @@ main img {
 }
 /* Main content media query */
 
+/* If the screen is at least 1024px, adjust these properties. */
 
+@media screen and (min-width: 1024px){
+        main {
+            width:  70%;
+        }
+        aside{
+            width: 30%;
+        }
+        .container{
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 1em;
+            margin-inline: 5%;
+        }
+        .container:nth-child(5){
+            margin-bottom: 0;
+            padding: 0;
+        }
+}
 
 
 .small-logo {
@@ -206,4 +262,24 @@ footer ul {
     max-width: 2em;
     filter: invert(1);
     cursor: pointer;
+}
+
+
+.footer-logos>li:nth-child(1){
+    animation: bounce ease-in-out 1s 1s infinite;  
+}
+.footer-logos>li:nth-child(2){
+    animation: bounce ease-in-out 1s 1.1s infinite;  
+}
+.footer-logos>li:nth-child(3){
+    animation: bounce ease-in-out 1s 1.2s infinite;  
+}
+
+@keyframes bounce {
+
+    0% { transform: translateY(0)}
+    30% { transform: translateY(-.5em)}
+    50% { transform: translateY(0)}
+    100% { transform: translateY(0)}
+    
 }
