@@ -66,24 +66,10 @@ header h1 span img {
     width: .5em;
 }
 
-
-/* If the screen size is 710px wide or more, set the font-size  */
-
-@media screen and (min-width: 710px) {
-    header h1 {
-        font-size: 5.5em;
-    }
-}
+/* Font Media Query */
 
 
-/* If the screen size is 526px wide or less, set the font-size  */
 
-@media screen and (max-width: 526px) {
-    header h1 {
-        margin-top: 1em;
-        font-size: 4em;
-    }
-}
 
 
 /* NAVIGATION */
@@ -103,34 +89,14 @@ nav ul {
 
 nav li {
     position: relative;
-    /* ? Margin 0 for top and bottom and 1em for left and right */
+  
     margin: 0 1em;
-    /*? */
+ 
     font-weight: bold;
     cursor: pointer;
 }
 
-.underline:after {
-    position: absolute;
-    content: '';
-    height: 2px;
-    bottom: -4px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    width: 0%;
-    background: grey;
-    -o-transition: .5s;
-    -ms-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s;
-    transition: .5s;
-}
-
-.underline:hover:after {
-    width: 100%;
-    background: green;
-}
+/* Underline nav links */
 
 
 /* CONTENT */
@@ -138,7 +104,7 @@ nav li {
 .container {
     display: flex;
     flex-direction: column;
-    /* min-height: ; */
+
     text-align: center;
     gap: 1em;
     padding: 0 1.5em;
@@ -150,9 +116,9 @@ aside {
 }
 
 main img {
-    /* ? Show width 1000px and show in mobile view- Notice it bounces off the page */
-    width: 100%;
-    /* width: 1000px; */
+   /* --------------------------------------------------------------- */
+    width: 500px;
+
     max-width: 45em;
     height: auto;
     border-radius: 10px;
@@ -162,14 +128,15 @@ main img {
 /* CARDS */
 
 .container:nth-child(3) {
+    /* ---------------------------------------- */
     gap: 2em;
     width: 100%;
     margin: 3em 0;
     height: 100%;
     display: flex;
-    /*? Show this off in toggling the responsiveness */
+    /*  */
     flex-flow: row wrap;
-    /*? */
+
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -190,25 +157,10 @@ main img {
     width: 15em;
     max-width: 20em;
 }
+/* Main content media query */
 
-@media screen and (min-width: 1024px) {
-    main {
-        width: 70%;
-    }
-    aside {
-        width: 30%;
-    }
-    .container {
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 1em;
-        margin-inline: 5%;
-    }
-    .container:nth-child(5) {
-        margin-bottom: 0;
-        padding: 0;
-    }
-}
+
+
 
 .small-logo {
     width: 4em;
