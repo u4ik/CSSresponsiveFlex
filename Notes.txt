@@ -1,0 +1,2 @@
+All images should have a width of 100% 
+    show example

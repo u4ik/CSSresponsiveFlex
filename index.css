@@ -1,0 +1,258 @@
+/* GLOBAL */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 5em 0;
+    min-height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Layout */
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* TYPOGRAPHY */
+
+h3,
+h2 {
+    color: green;
+    text-align: center;
+}
+
+p {
+    margin-top: 0;
+}
+
+p:first-letter {
+    font-size: 1.2em;
+    color: green;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: .1em;
+}
+
+
+/* HEADER */
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url(./assets/5.png);
+    background-size: cover;
+    background-position: bottom;
+    height: 14em;
+    /* ? Show off difference between 100% and 500px */
+    width: 100%;
+}
+
+header h1 {
+    position: absolute;
+    font-size: 5em;
+    padding: .1em;
+    border-radius: .2em;
+}
+
+header h1 span img {
+    width: .5em;
+}
+
+
+/* If the screen size is 710px wide or more, set the font-size  */
+
+@media screen and (min-width: 710px) {
+    header h1 {
+        font-size: 5.5em;
+    }
+}
+
+
+/* If the screen size is 526px wide or less, set the font-size  */
+
+@media screen and (max-width: 526px) {
+    header h1 {
+        margin-top: 1em;
+        font-size: 4em;
+    }
+}
+
+
+/* NAVIGATION */
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    border-bottom: solid 1px green;
+    border-radius: 1em;
+}
+
+nav li {
+    position: relative;
+    /* ? Margin 0 for top and bottom and 1em for left and right */
+    margin: 0 1em;
+    /*? */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.underline:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 0%;
+    background: grey;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.underline:hover:after {
+    width: 100%;
+    background: green;
+}
+
+
+/* CONTENT */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* min-height: ; */
+    text-align: center;
+    gap: 1em;
+    padding: 0 1.5em;
+}
+
+main,
+aside {
+    width: 100%;
+}
+
+main img {
+    /* ? Show width 1000px and show in mobile view- Notice it bounces off the page */
+    width: 100%;
+    /* width: 1000px; */
+    max-width: 45em;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* CARDS */
+
+.container:nth-child(3) {
+    gap: 2em;
+    width: 100%;
+    margin: 3em 0;
+    height: 100%;
+    display: flex;
+    /*? Show this off in toggling the responsiveness */
+    flex-flow: row wrap;
+    /*? */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.card {
+    background: #24421C;
+    border-radius: 5px 5px 5px 5px;
+    max-width: 18em;
+    color: white;
+    font-weight: light;
+    position: relative;
+    filter: drop-shadow(.3em .3em .3em grey);
+}
+
+.card-thumb {
+    border-radius: 5px 5px 0 0;
+    width: 15em;
+    max-width: 20em;
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        width: 70%;
+    }
+    aside {
+        width: 30%;
+    }
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1em;
+        margin-inline: 5%;
+    }
+    .container:nth-child(5) {
+        margin-bottom: 0;
+        padding: 0;
+    }
+}
+
+.small-logo {
+    width: 4em;
+    height: 4em;
+    border-radius: 10px;
+    padding: .4em;
+    margin: 0 auto;
+    border: solid 1px green;
+    cursor: pointer;
+}
+
+span .apple-logo {
+    width: 1em;
+    height: 1.4em;
+    margin: 0 .05em 0 .2em;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: rgba(0, 0, 0, .6);
+    padding: .5em;
+    width: 100%;
+    height: 2em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(.5em);
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3em;
+    padding: 0;
+}
+
+.logo {
+    width: 1.5em;
+    max-width: 2em;
+    filter: invert(1);
+    cursor: pointer;
+}
