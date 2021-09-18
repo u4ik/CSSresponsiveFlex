@@ -135,7 +135,6 @@ main img {
     height: 100%;
     display: flex;
     /*  */
-    flex-flow: row wrap;
 
     align-items: center;
     justify-content: center;
